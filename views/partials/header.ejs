@@ -1,0 +1,86 @@
+<script src="../js/jquery.js"></script>
+<script src="../js/uikit.js"></script>
+<link rel="stylesheet" href="../css/uikit.css" />
+<script src="../js/components/sticky.js"></script>
+<link rel="stylesheet" href="../css/components/sticky.css" />
+<script src="../js/components/form-password.js"></script>
+<link rel="stylesheet" href="../css/components/form-password.css" />
+<script src="../js/components/notify.js"></script>
+<link rel="stylesheet" href="../css/components/notify.css" />
+
+<nav class="uk-navbar uk-navbar-attached" data-uk-sticky>
+<a href="/" class="uk-navbar-brand uk-hidden-small">Xen Delta</a>
+    <ul class="uk-navbar-nav uk-hidden-small"> 
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/showcase">Showcase</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+    <a href="#sidepanel" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+    
+    <div class="uk-navbar-flip uk-hidden-small">
+        <% if (!!user) { %>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
+                    
+                       <a href=""> <%= user.local.name %>&nbsp<i class="uk-icon-caret-down"></i></a>
+                   
+                    <div class="uk-dropdown uk-dropdown-navbar">
+                        <ul class="uk-nav uk-nav-navbar">
+                            <li class="uk-nav-header">Account</li>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/settings">Settings</a></li>
+                            <% if (user.local.permissions.indexOf("Admin") != -1) { %>
+                            <li class="uk-nav-header">Content Management</li>
+                            <li><a href="/webcms">Website</a></li>
+                            <li><a href="/appcms">Mobile App</a></li>
+                            <% } %>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <% } else { %>
+                <ul class="uk-navbar-nav">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                </ul>
+                <% } %>
+    </div>
+
+    <div class="uk-navbar-brand uk-navbar-center uk-visible-small">Xen Delta</div>
+
+</nav><br>
+<div id="sidepanel" class="uk-offcanvas ">
+    <div class="uk-offcanvas-bar">
+        <ul class='uk-nav uk-nav-offcanvas' data-uk-nav=''>
+
+                            <li class="uk-nav-header">Navigation</li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/showcase">Showcase</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="http:\\www.github.com/cgidzinski">Github</a></li>
+         <% if (!!user) { %>
+                            <% if (user.local.permissions.indexOf("Admin") != -1) { %>
+                            <li class="uk-nav-header">Content Management</li>
+                            <li><a href="/webcms">Website</a></li>
+                            <li><a href="/appcms">Mobile App</a></li>
+                            <% } %>
+                            <li class="uk-nav-header">Account</li>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/settings">Settings</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/logout">Logout</a></li>
+         <% } else { %>
+                    <li class="uk-nav-header">Account</li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                <% } %>         
+        </ul>
+    </div>
+</div>

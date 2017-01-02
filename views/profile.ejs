@@ -1,0 +1,33 @@
+<!doctype html>
+
+<head>
+    <title>Xen Delta | Profile</title>
+    <%= include /partials/header.ejs %>
+</head>
+<body>
+
+
+<article class="uk-article section-white">
+    <h1 class="uk-article-title">Profile Page</h1>
+    <p class="uk-article-lead">
+
+    <strong>id</strong>: <%= user._id %><br>
+    <strong>name</strong>: <%= user.local.name %><br>
+    <strong>email</strong>: <%= user.local.email %><br>
+    <strong>password</strong>: <%= user.local.password %><br>
+    <strong>permissions</strong>:<%= user.local.permissions %><hr>
+
+<% for(var i=0; i<user.local.permissions.length; i++) { %>
+        <li>
+               [<%= user.local.permissions[i] %>]
+        </li>
+    <% } %>
+
+</article>
+
+
+</body>
+<%= include /partials/footer.ejs %>
+    </html>
+
+

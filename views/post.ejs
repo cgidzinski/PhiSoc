@@ -1,0 +1,62 @@
+<!doctype html>
+
+<head>
+    <title>Xen Delta</title>
+    <%= include /partials/header.ejs %>
+</head>
+<body>
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+                <div class="uk-width-medium-1-1">
+                    <article>
+                        <h1 class="uk-article-title">
+                           [<%= post.type %>] <%= post.title %>
+                        </h1>
+                        <p class="uk-article-meta">Written by <%= post.author %> on <%= post.date %>.
+
+    <% if ( (!!user)&&(user.local.permissions.indexOf("Admin") != -1) ) { %>
+    <a href="/delpost/<%= post.url %>">Delete Post</a>
+    <% } %>
+
+                        </p>      
+
+                            <img width="900" height="300" src="<%= post.img %>" alt="">
+<p><%= post.body %></p>                        
+</article>
+<a id="comments"></a>
+<hr>
+<h2>Comment:</h2>
+<% for(var i=0; i<post.comments.length; i++) { %>
+<% if ( post.comments[i].visible == true ) { %>
+<article class="uk-comment">
+    <header class="uk-comment-header">
+        <img class="uk-comment-avatar" src="http://getuikit.com/docs/images/placeholder_avatar.svg" alt="">
+        <h4 class="uk-comment-title"><%= post.comments[i].author %></h4>
+        <div class="uk-comment-meta"><%= post.comments[i].date %></div>
+    </header>
+    <div class="uk-comment-body"><%= post.comments[i].body %></div>
+    <% if ( (!!user)&&(user.local.permissions.indexOf("Admin") != -1) ) { %>
+    <a href="/delcom/<%= post.url %>/<%= post.comments[i]._id %>">Delete Comment</a>
+    <% } %>
+    <hr>
+</article>
+<% } %>
+<% } %>
+
+<% if (!!user) { %>
+                <form class="uk-panel uk-panel-box uk-form" action="/post/<%= post.url %>" method="post">
+                    <div class="uk-form-row">
+                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Comment On This" name="body" required="true">
+                    </div>
+                           <div class="uk-form-row">
+                       <button type="submit" class="uk-width-1-1 uk-button-primary uk-button-large">Submit</button>
+                    </div>
+                </form>
+<% } %>
+                   
+                    
+       
+            </div>
+</body>
+<%= include /partials/footer.ejs %>
+    </html>
