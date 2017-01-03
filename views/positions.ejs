@@ -1,0 +1,31 @@
+<!doctype html>
+
+<head>
+    <title>PHI | Positions</title>
+    <%= include /partials/header.ejs %>
+</head>
+
+<body class="main">
+    <div class="title">
+        <h1>Positions</h1>
+        <p>Join Us!</p>
+    
+    <div class="content">
+        <div>
+            <% for(var i=0; i<positions.length; i++) { %>
+                <article>
+                    <h2 class="uk-article-title"><%= positions[i].title %></h2>
+                    <p class="uk-article-meta">Added on
+                        <%= positions[i].date %>.</p>
+                    <p>
+                        <%= positions[i].body %>
+                    </p>
+                </article>
+                <br>
+                <% } %>
+        </div>
+    </div></div>
+</body>
+<%= include /partials/footer.ejs %>
+
+    </html>

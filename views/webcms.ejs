@@ -1,62 +1,72 @@
 <!doctype html>
 
 <head>
-    <title>Xen Delta</title>
+    <title>PHI Webcms</title>
     <%= include /partials/header.ejs %>
 </head>
-<body>
-<h2>Website CMS</h2>
-                <form class="uk-panel uk-panel-box uk-form" action="/newpost" method="post">
-                        <h3 class="uk-panel-title">New Blog Post</h3>
+
+<body class="main">
+    <div class="title">
+        <h1>Web CMS</h1> </div>
+    <div class="content">
+        <div>
+            <form class="uk-panel uk-panel-box uk-form" action="/newpost" method="post">
+                <h3 class="uk-panel-title">New Blog Post</h3>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Type" name="type" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Url" name="url" required="required">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true"> </div>
+                <div class="uk-form-row">
+                    <button type="submit" class="uk-width-1-1 uk-button-primary uk-button-large">Submit</button>
+                </div>
+            </form>
+            <br>
+            <form class="uk-panel uk-panel-box uk-form" action="/newposition" method="post">
+                <h3 class="uk-panel-title">New Position</h3>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
+                <div class="uk-form-row">
+                    <button type="submit" class="uk-width-1-1 uk-button-danger uk-button-large">Submit</button>
+                </div>
+            </form>
+            <br>
+            <form class="uk-panel uk-panel-box uk-form" action="/newshowcase" method="post">
+                <h3 class="uk-panel-title">New Showcase Post</h3>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true"> </div>
+                <div class="uk-form-row">
+                    <button type="submit" class="uk-width-1-1 uk-button-danger uk-button-large">Submit</button>
+                </div>
+            </form>
+            <br>
+            <form class="uk-panel uk-panel-box uk-form" action="/updatehome" method="post">
+                <h3 class="uk-panel-title">Update Home</h3>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true"> </div>
+                <div class="uk-form-row">
+                    <button type="submit" class="uk-width-1-1 uk-button-primary uk-button-large">Submit</button>
+                </div>
+            </form>
+            <br>
+            <form class="uk-panel uk-panel-box uk-form" action="/updateabout" method="post">
+                <h3 class="uk-panel-title">Update About</h3>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
                     <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Type" name="type" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Url" name="url" required="required">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true">
+                        <button type="submit" class="uk-width-1-1 uk-button-danger uk-button-large">Submit</button>
                     </div>
-                           <div class="uk-form-row">
-                       <button type="submit" class="uk-width-1-1 uk-button-primary uk-button-large">Submit</button>
-                    </div>
-                </form>
-
-
-                                <form class="uk-panel uk-panel-box uk-form" action="/newshowcase" method="post">
-                        <h3 class="uk-panel-title">New Showcase Post</h3>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true">
-                    </div>
-                           <div class="uk-form-row">
-                       <button type="submit" class="uk-width-1-1 uk-button-danger uk-button-large">Submit</button>
-                    </div>
-                </form>
-
-                                               <form class="uk-panel uk-panel-box uk-form" action="/updatehome" method="post">
-                        <h3 class="uk-panel-title">Update Home</h3>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Image Url" name="img" required="true">
-                    </div>
-                           <div class="uk-form-row">
-                       <button type="submit" class="uk-width-1-1 uk-button-primary uk-button-large">Submit</button>
-                    </div>
-                </form>
-
-
-                                               <form class="uk-panel uk-panel-box uk-form" action="/updateabout" method="post">
-                        <h3 class="uk-panel-title">Update About</h3>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Title Text" name="title" required="true">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Body Text" name="body" required="true">
-                           <div class="uk-form-row">
-                       <button type="submit" class="uk-width-1-1 uk-button-danger uk-button-large">Submit</button>
-                    </div>
-                </form>
-
-            
+            </form>
+            </div>
+        </div>
+    </div>
 </body>
 <%= include /partials/footer.ejs %>
+
     </html>

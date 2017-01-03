@@ -3,7 +3,7 @@
 <%= include /partials/imports.ejs %>
 
     <head>
-        <title>Xen Delta | Login</title>
+        <title>PHI | Login</title>
     </head>
     <% if (message.length > 0) { %>
         <div class="uk-alert uk-alert-danger">
@@ -13,7 +13,7 @@
 
             <body class="uk-height-1-1">
                 <div class="uk-vertical-align uk-text-center uk-height-1-1">
-                    <div class="uk-vertical-align-middle" style="width: 250px;"> <img class="uk-margin-bottom" width="140" height="120" src="/assets/logo.png" alt="">
+                    <div class="uk-vertical-align-middle" style="width: 250px;"> <img class="uk-margin-bottom" src="/assets/logo.jpg" alt="">
                         <form class="uk-panel uk-panel-box uk-form" action="/login" method="post">
                             <div class="uk-form-row">
                                 <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Email" name="email" required="true"> </div>
@@ -24,10 +24,10 @@
                             </div>
                             <div class="uk-form-row uk-text-small">
                         </form>
-                        <p>Need an account? <a href="/signup">Signup</a></p><i class="uk-icon-large uk-icon-cog"></i>
+                        <p>Need an account? <a href="/signup">Signup</a></p>
+                        <p><a href="/">Go Back</a></p>
                         </div>
                     </div>
             </body>
-            <%= include /partials/footer.ejs %>
 
 </html>

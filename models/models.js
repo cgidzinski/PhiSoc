@@ -18,16 +18,12 @@ var Post = mongoose.model('Post', postSchema)
 var homeSchema = new mongoose.Schema({
 
         title        : String,
-        date         : String,
         body         : String,
         img          : String
 });
 var Home = mongoose.model('Home', homeSchema)
 //
 var aboutSchema = new mongoose.Schema({
-
-        title        : String,
-        date         : String,
         body         : String
     });
 var About = mongoose.model('About', aboutSchema)
@@ -40,6 +36,14 @@ var showcaseSchema = new mongoose.Schema({
         img          : String
 });
 var Showcase = mongoose.model('Showcase', showcaseSchema)
+//
+var positionSchema = new mongoose.Schema({
+
+        title        : String,
+        body         : String,
+        date         : String
+});
+var Position = mongoose.model('Position', positionSchema)
 //
 var commentSchema = new Schema({
                 author           : String,
@@ -55,5 +59,6 @@ module.exports = {
     Comment: Comment,
     Home: Home,
     Showcase: Showcase,
+    Position: Position,
     About: About    
 };
