@@ -7,14 +7,16 @@
 
 <body class="main">
     <div class="content">
-        <article> <img src="<%= home.img %>" width="600" alt="">
-            <h1 class="uk-article-title">
+        <div class="body">
+            <article> <img src="<%= home.img %>" width="600" alt="">
+                <h1 class="uk-article-title">
                             <%= home.title %>
                         </h1>
-            <p>
-                <%- home.body %>
-            </p>
-        </article>
+                <p>
+                    <%- home.body %>
+                </p>
+            </article>
+        </div>
     </div>
 </body>
 <%= include /partials/footer.ejs %>
