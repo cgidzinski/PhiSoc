@@ -24,7 +24,7 @@
                                 <%= posts[i].body.substring(0,256) %>...</p>
                             <% }else{ %>
                                 <p>
-                                    <%= posts[i].body %>
+                                    <%- posts[i].body %>
                                 </p>
                                 <% } %>
                                     <p> <a class="uk-button uk-button-primary" href="/post/<%= posts[i].url %>">Continue Reading</a>
