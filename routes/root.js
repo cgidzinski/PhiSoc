@@ -38,10 +38,7 @@ module.exports = function(app, passport) {
             });
         });
         //        
-
-
-
-app.get('/positions', function(req, res) {
+        app.get('/positions', function(req, res) {
             DB.Position.find({}, function(err, positions) {
                 res.render('positions.ejs', {
                     user: req.user,
@@ -65,15 +62,6 @@ app.get('/positions', function(req, res) {
                 res.redirect("/positions");
             });
         });
-
-
-
-
-
-
-
-
-
         //
         app.get('/about', function(req, res) {
             DB.About.findOne({}, function(err, about) {
