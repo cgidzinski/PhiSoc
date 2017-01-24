@@ -5,7 +5,7 @@
     margin-left: auto;
     margin-right: auto;
     flex: 1;
-    padding:15px 0px ;
+    padding: 15px 0px;
 }
 
 .content {
@@ -16,12 +16,59 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-top:15px;
+    padding-top: 15px;
     flex: 1;
 }
 
 .main {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #dddddd;
+    /*    background: url('https://s3.amazonaws.com/lan-ce/background.jpg') repeat;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;*/
+    margin: 0;
+    padding: 0;
 }
+
+.uk-navbar {
+    background-color: #272D3B;
+}
+
+.uk-navbar-brand {
+    color: #FFFFFF;
+}
+
+.uk-navbar-brand:hover {
+    color: #FFFFFF;
+    background-color: #93CFCD;
+    transition: background-color 0.3s ease-in 0s;
+}
+
+.uk-navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.uk-navbar-nav > li > a:hover {
+    color: #93CFCD;
+    background-color: #272D3B;
+    transition: color 0.3s ease-in 0s;
+}
+
+footer {
+    background-color: #272D3B;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .item {
+    padding: 5px;
+    justify-content: space-between;
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
