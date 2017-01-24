@@ -7,7 +7,7 @@ var postSchema = new mongoose.Schema({
     title: String,
     author: String,
     type: String,
-    date: String,
+    date: {type: Date, default: Date.now},
     body: String,
     url: String,
     img: String,
@@ -30,7 +30,7 @@ var About = mongoose.model('About', aboutSchema)
 var showcaseSchema = new mongoose.Schema({
     title: String,
     body: String,
-    date: String,
+    date: {type: Date, default: Date.now},
     img: String
 });
 var Showcase = mongoose.model('Showcase', showcaseSchema)
@@ -38,13 +38,13 @@ var Showcase = mongoose.model('Showcase', showcaseSchema)
 var positionSchema = new mongoose.Schema({
     title: String,
     body: String,
-    date: String
+    date: {type: Date, default: Date.now},
 });
 var Position = mongoose.model('Position', positionSchema)
     //
 var commentSchema = new Schema({
     author: String,
-    date: String,
+    date: {type: Date, default: Date.now},
     body: String,
     visible: Boolean
 })

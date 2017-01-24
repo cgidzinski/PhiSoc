@@ -50,7 +50,6 @@ module.exports = function(app, passport) {
             var newPosition = new DB.Position();
             newPosition.title = req.body.title;
             newPosition.body = req.body.body;
-            newPosition.date = Date.now();
             newPosition.save();
             res.render('webcms.ejs', {
                 user: req.user
@@ -119,7 +118,6 @@ module.exports = function(app, passport) {
                 var comment = new DB.Comment();
                 comment.author = req.user.local.name;
                 comment.body = req.body.body;
-                comment.date = Date.now();
                 comment.visible = true;
                 post.comments.push(comment);
                 post.save();
@@ -145,7 +143,6 @@ module.exports = function(app, passport) {
             newShowcase.title = req.body.title;
             newShowcase.body = req.body.body;
             newShowcase.img = req.body.img;
-            newShowcase.date = Date.now();
             newShowcase.save();
             res.render('webcms.ejs', {
                 user: req.user
@@ -186,7 +183,6 @@ module.exports = function(app, passport) {
             newPost.author = req.user.local.name;
             newPost.img = req.body.img;
             newPost.body = req.body.body;
-            newPost.date = Date.now();
             newPost.save();
             res.render('webcms.ejs', {
                 user: req.user
