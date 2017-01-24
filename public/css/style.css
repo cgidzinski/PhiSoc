@@ -24,12 +24,13 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #dddddd;
-    /*    background: url('https://s3.amazonaws.com/lan-ce/background.jpg') repeat;
+    /*    
+    background: url('https://s3.amazonaws.com/lan-ce/background.jpg') repeat;
     -webkit-background-size: auto;
     -moz-background-size: auto;
     -o-background-size: auto;
-    background-size: auto;*/
+    background-size: auto;
+    */
     margin: 0;
     padding: 0;
 }
@@ -71,4 +72,3 @@ footer .item {
     margin-top: auto;
     margin-bottom: auto;
 }
-
